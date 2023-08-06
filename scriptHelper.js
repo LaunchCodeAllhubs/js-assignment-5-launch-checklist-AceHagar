@@ -64,21 +64,20 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             launchStatus.style.color = "#419F6A";
             launchStatus.innerHTML = "Shuttle is ready for launch";
         }
-
-
-
     }
 }
 
 
 async function myFetch() {
-    let planetsReturned;
-
-    planetsReturned = await fetch().then(function (response) {
+    
+    let planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function (response) {
+        return response.json();
+        
     });
-
-    return planetsReturned;
+    //console.log(planetsReturned);
+    return planetsReturned
 }
+
 
 function pickPlanet(planets) {
 }
